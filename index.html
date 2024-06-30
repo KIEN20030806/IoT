@@ -1,0 +1,945 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
+    <link rel="shortcut icon" href="#">
+    <title>Smart home</title>
+</head>
+<body>
+    <div class="container">
+        <!-- Side bar -->
+        <aside>
+            <div class="toggle">
+                <div class="logo">
+                    <img src="img/building.png" alt="home">
+                    <h2>Smart <span class="danger">Home</span></h2>
+                </div>
+                <div class="close" id="close-btn">
+                    <span class="material-icons-outlined">
+                        close
+                    </span>
+                </div>
+            </div>
+
+            <div class="sidebar">
+                <a href="#" class="active" onclick="switchPage(event, 'living_room')">
+                    <span class="material-icons-outlined">
+                        weekend
+                    </span>
+                    <h3>Living room</h3>
+                </a>
+                <a href="" onclick="switchPage(event, 'kitchen')">
+                    <span class="material-icons-outlined">
+                        kitchen
+                    </span>
+                    <h3>Kitchen</h3>
+                </a>
+                <a href="" onclick="switchPage(event, 'bedroom')">
+                    <span class="material-icons-outlined">
+                        king_bed
+                    </span>
+                    <h3>Bedroom</h3>
+                </a>
+                <a href="" onclick="switchPage(event, 'timer')">
+                    <span class="material-icons-outlined">
+                        alarm
+                    </span>
+                    <h3>Timer</h3>
+                </a>
+                <a href="signpage.html">
+                    <span class="material-icons-outlined">
+                        add
+                    </span>
+                    <h3>New login</h3>
+                </a>
+                <a href="signpage.html">
+                    <span class="material-icons-outlined">
+                        logout
+                    </span>
+                    <h3>Logout</h3>
+                </a>
+            </div>
+        </aside>
+        <!-- End of sidebar -->
+
+        <!-- Main content -->
+        <main>
+            <!-- Sensors -->
+            <div class="nav">
+                <div class="right-nav">
+                    <button id="menu-btn">
+                        <span class="material-icons-outlined">
+                            menu
+                        </span>
+                    </button>
+                    <div class="dark-mode">
+                        <span class="material-icons-outlined active">
+                            light_mode
+                        </span>
+                        <span class="material-icons-outlined">
+                            dark_mode
+                        </span>
+                    </div>
+
+                    <div class="profile">
+                        <div class="info">
+                            <p><b>Admin</b></p>
+                            <small class="text-muted">Welcome</small>
+                        </div>
+                        <div class="profile-photo">
+                            <img src="img/248444142_891818821723546_4752748802489145693_n.jpg">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <section id="living_room">
+                <div class="sensor">
+                    <div class="temperature">
+                        <div class="status">
+                            <div class="info">
+                                <h3>Temperature</h3>
+                                <div class="unit">
+                                    <h1 id="temp_01">00</h1>
+                                    <h1>°C</h1>
+                                </div>
+                            </div>
+                            <div class="sensor-icon">
+                                <img src="img/thermometer.png" alt="temp">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="humidity">
+                        <div class="status">
+                            <div class="info">
+                                <h3>Humidity</h3>
+                                <div class="unit">
+                                    <h1 id="hum_01">00</h1>
+                                    <h1>%</h1>
+                                </div>
+                            </div>
+                            <div class="sensor-icon">
+                                <img src="img/humidity.png" alt="hum">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="gas-detect">
+                        <div class="status">
+                            <div class="info">
+                                <h3>Gas detector</h3>
+                                <div class="unit">
+                                    <h1 id="gas_01">00</h1>
+                                    <h1>ppm</h1>
+                                </div>
+                            </div>
+                            <div class="sensor-icon">
+                                <img src="img/gas-sensor.png" alt="gas">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="brightness">
+                        <div class="status">
+                            <div class="info">
+                                <h3>Brightness</h3>
+                                <div class="unit">
+                                    <h1 id="bright_01">00</h1>
+                                    <h1>Lux</h1>
+                                </div>
+                            </div>
+                            <div class="sensor-icon">
+                                <img src="img/brightness.png" alt="bright">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Controller -->
+                <div class="controller">
+                    <h1>Living room</h1>
+                    <div class="device">
+                        <div class="furn" id="light-lr"> 
+                            <div class="side1">
+                                <img src="img/light-off.png" alt="light-bulb img" id="light-lr-img">
+                            </div>
+                            <div class="side2">
+                                <h1>Light</h1>
+                                <h2 id="light-lr-status">OFF</h2>
+                                <label class="switch">
+                                    <input type="checkbox" id="light-lr-btn">
+                                    <span class="toggle-btn"></span>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="furn" id="ac-lr">
+                            <div class="side1">
+                                <img src="img/air-conditioning-off.png" alt="ac img" id="ac-lr-img">
+                            </div>
+                            <div class="side2">
+                                <h1>AC</h1>
+                                <div class="counit">
+                                    <span id="acValue-lr">16</span>
+                                    <h2 id="ac_lr_unit">°C</h2>
+                                </div>
+                                <input type="range" value="16" min="16" max="33" class="range-slider" id="ac-lr-slider">
+                            </div>
+                        </div>
+                        <div class="furn" id="tv">
+                            <div class="side1">
+                                <img src="img/tv-off.png" alt="tv img" id="tv-img">
+                            </div>
+                            <div class="side2">
+                                <h1>TV</h1>
+                                <h2 id="tv-status">OFF</h2>
+                                <label class="switch">
+                                    <input type="checkbox" id="tv-btn">
+                                    <span class="toggle-btn"></span>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="furn" id="lamp-lr">
+                            <div class="side1">
+                                <img src="img/lamp-off.png" alt="lamp img" id="lamp-lr-img">
+                            </div>
+                            <div class="side2">
+                                <h1>Lamp</h1>
+                                <h2 id="lamp-lr-status">OFF</h2>
+                                <label class="switch">
+                                    <input type="checkbox" id="lamp-lr-btn">
+                                    <span class="toggle-btn"></span>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="furn" id="fan-lr">
+                            <div class="side1">
+                                <img src="img/fan-off.png" alt="fan img" id="fan-lr-img">
+                            </div>
+                            <div class="side2">
+                                <h1>Fan</h1>
+                                <h2 id="fan-lr-status">OFF</h2>
+                                <label class="switch">
+                                    <input type="checkbox" id="fan-lr-btn">
+                                    <span class="toggle-btn"></span>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="furn" id="speaker">
+                            <div class="side1">
+                                <img src="img/loud-speaker.png" alt="speaker img" id="speaker-img">
+                            </div>
+                            <div class="side2">
+                                <h1>Speaker</h1>
+                                <div class="counit">
+                                    <span id="speakerValue">0</span>
+                                    <h2>%</h2>
+                                </div>
+                                <input type="range" value="0" min="0" max="100" class="range-slider" id="speaker-slider"">
+                            </div>
+                        </div>
+                    </div>         
+                </div>
+                <div class="footer">
+                    <h3>Nguyen Tien Dung - 21119183</h3>
+                </div>  
+            </section>
+            <section id="kitchen" style="display:none">
+                <div class="sensor">
+                    <div class="temperature">
+                        <div class="status">
+                            <div class="info">
+                                <h3>Temperature</h3>
+                                <div class="unit">
+                                    <h1 id="temp_02">00</h1>
+                                    <h1>°C</h1>
+                                </div>
+                            </div>
+                            <div class="sensor-icon">
+                                <img src="img/thermometer.png" alt="temp">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="humidity">
+                        <div class="status">
+                            <div class="info">
+                                <h3>Humidity</h3>
+                                <div class="unit">
+                                    <h1 id="hum_02">00</h1>
+                                    <h1>%</h1>
+                                </div>
+                            </div>
+                            <div class="sensor-icon">
+                                <img src="img/humidity.png" alt="hum">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="gas-detect">
+                        <div class="status">
+                            <div class="info">
+                                <h3>Gas detector</h3>
+                                <div class="unit">
+                                    <h1 id="gas_02">00</h1>
+                                    <h1>ppm</h1>
+                                </div>
+                            </div>
+                            <div class="sensor-icon">
+                                <img src="img/gas-sensor.png" alt="gas">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="brightness">
+                        <div class="status">
+                            <div class="info">
+                                <h3>Brightness</h3>
+                                <div class="unit">
+                                    <h1 id="bright_02">00</h1>
+                                    <h1>Lux</h1>
+                                </div>
+                            </div>
+                            <div class="sensor-icon">
+                                <img src="img/brightness.png" alt="bright">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Controller -->
+                <div class="controller">
+                    <h1>Kitchen</h1>
+                    <div class="device">
+                        <div class="furn" id="light-kc"> 
+                            <div class="side1">
+                                <img src="img/light-off.png" alt="light-bulb img" id="light-kc-img">
+                            </div>
+                            <div class="side2">
+                                <h1>Light</h1>
+                                <h2 id="light-kc-status">OFF</h2>
+                                <label class="switch">
+                                    <input type="checkbox" id="light-kc-btn">
+                                    <span class="toggle-btn"></span>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="furn" id="ac-kc">
+                            <div class="side1">
+                                <img src="img/air-conditioning-off.png" alt="ac img" id="ac-kc-img">
+                            </div>
+                            <div class="side2">
+                                <h1>AC</h1>
+                                <div class="counit">
+                                    <span id="acValue-kc">16</span>
+                                    <h2 id="ac_kc_unit">°C</h2>
+                                </div>
+                                <input type="range" value="16" min="16" max="33" class="range-slider" id="ac-kc-slider">
+                            </div>
+                        </div>
+                        <div class="furn" id="cooker">
+                            <div class="side1">
+                                <img src="img/cooker-off.png" alt="cooker img" id="cooker-img">
+                            </div>
+                            <div class="side2">
+                                <h1>Cooker</h1>
+                                <h2 id="cooker-status">OFF</h2>
+                                <label class="switch">
+                                    <input type="checkbox" id="cooker-btn">
+                                    <span class="toggle-btn"></span>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="furn" id="fridge">
+                            <div class="side1">
+                                <img src="img/refrigerator-off.png" alt="fridge img" id="fridge-img">
+                            </div>
+                            <div class="side2">
+                                <h1>Fridge</h1>
+                                <div class="counit">
+                                    <span id="fridgeValue">16</span>
+                                    <h2 id="fridge_unit">°C</h2>
+                                </div>
+                                <input type="range" value="-18" min="-18" max="4" class="range-slider" id="fridge-slider">
+                            </div>
+                        </div>
+                        <div class="furn" id="hood">
+                            <div class="side1">
+                                <img src="img/hood-off.png" alt="hood img" id="hood-img">
+                            </div>
+                            <div class="side2">
+                                <h1>Hood</h1>
+                                <h2 id="hood-status">OFF</h2>
+                                <label class="switch">
+                                    <input type="checkbox" id="hood-btn">
+                                    <span class="toggle-btn"></span>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="furn" id="stove">
+                            <div class="side1">
+                                <img src="img/stove-off.png" alt="stove img" id="stove-img">
+                            </div>
+                            <div class="side2">
+                                <h1>Stove</h1>
+                                <h2 id="stove-status">OFF</h2>
+                                <label class="switch">
+                                    <input type="checkbox" id="stove-btn">
+                                    <span class="toggle-btn"></span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>        
+                </div>
+                <div class="footer">
+                    <h3>Nguyen Tien Dung - 21119183</h3>
+                </div>  
+            </section>
+            <section id="bedroom" style="display:none">
+                <div class="sensor">
+                    <div class="temperature">
+                        <div class="status">
+                            <div class="info">
+                                <h3>Temperature</h3>
+                                <div class="unit">
+                                    <h1 id="temp_03">00</h1>
+                                    <h1>°C</h1>
+                                </div>
+                            </div>
+                            <div class="sensor-icon">
+                                <img src="img/thermometer.png" alt="temp">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="humidity">
+                        <div class="status">
+                            <div class="info">
+                                <h3>Humidity</h3>
+                                <div class="unit">
+                                    <h1 id="hum_03">00</h1>
+                                    <h1>%</h1>
+                                </div>
+                            </div>
+                            <div class="sensor-icon">
+                                <img src="img/humidity.png" alt="hum">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="gas-detect">
+                        <div class="status">
+                            <div class="info">
+                                <h3>Gas detector</h3>
+                                <div class="unit">
+                                    <h1 id="gas_03">00</h1>
+                                    <h1>ppm</h1>
+                                </div>
+                            </div>
+                            <div class="sensor-icon">
+                                <img src="img/gas-sensor.png" alt="gas">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="brightness">
+                        <div class="status">
+                            <div class="info">
+                                <h3>Brightness</h3>
+                                <div class="unit">
+                                    <h1 id="bright_03">00</h1>
+                                    <h1>Lux</h1>
+                                </div>
+                            </div>
+                            <div class="sensor-icon">
+                                <img src="img/brightness.png" alt="bright">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Controller -->
+                <div class="controller">
+                    <h1>Bedroom</h1>
+                    <div class="device">
+                        <div class="furn" id="light-br"> 
+                            <div class="side1">
+                                <img src="img/light-off.png" alt="light-bulb img" id="light-br-img">
+                            </div>
+                            <div class="side2">
+                                <h1>Light</h1>
+                                <h2 id="light-br-status">OFF</h2>
+                                <label class="switch">
+                                    <input type="checkbox" id="light-br-btn">
+                                    <span class="toggle-btn"></span>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="furn" id="ac-br">
+                            <div class="side1">
+                                <img src="img/air-conditioning-off.png" alt="ac img" id="ac-br-img">
+                            </div>
+                            <div class="side2">
+                                <h1>AC</h1>
+                                <div class="counit">
+                                    <span id="acValue-br">16</span>
+                                    <h2 id="ac_br_unit">°C</h2>
+                                </div>
+                                <input type="range" value="16" min="16" max="33" class="range-slider" id="ac-br-slider">
+                            </div>
+                        </div>
+                        <div class="furn" id="pc">
+                            <div class="side1">
+                                <img src="img/pc-off.png" alt="pc img" id="pc-img">
+                            </div>
+                            <div class="side2">
+                                <h1>PC</h1>
+                                <h2 id="pc-status">OFF</h2>
+                                <label class="switch">
+                                    <input type="checkbox" id="pc-btn">
+                                    <span class="toggle-btn"></span>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="furn" id="lamp-br">
+                            <div class="side1">
+                                <img src="img/lamp-off.png" alt="lamp img" id="lamp-br-img">
+                            </div>
+                            <div class="side2">
+                                <h1>Lamp</h1>
+                                <h2 id="lamp-br-status">OFF</h2>
+                                <label class="switch">
+                                    <input type="checkbox" id="lamp-br-btn">
+                                    <span class="toggle-btn"></span>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="furn" id="fan-br">
+                            <div class="side1">
+                                <img src="img/fan-off.png" alt="fan img" id="fan-br-img">
+                            </div>
+                            <div class="side2">
+                                <h1>Fan</h1>
+                                <h2 id="fan-br-status">OFF</h2>
+                                <label class="switch">
+                                    <input type="checkbox" id="fan-br-btn">
+                                    <span class="toggle-btn"></span>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="furn" id="curtain">
+                            <div class="side1">
+                                <img src="img/curtains.png" alt="curtain img" id="curtain-img">
+                            </div>
+                            <div class="side2">
+                                <h1>Curtain</h1>
+                                <div class="counit">
+                                    <h2>Level</h2>
+                                    <span id="curtainValue">1</span>
+                                </div>
+                                <input type="range" value="1" min="1" max="4" class="range-slider" id="curtain-slider">
+                            </div>
+                        </div>
+                    </div>         
+                </div>
+                <div class="footer">
+                    <h3>Nguyen Tien Dung - 21119183</h3>
+                </div>  
+            </section>
+            <section id="timer" style="display:none">
+                <div class="timer-content">
+                    <div class="list-device">
+                        <h2>Devices</h2>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Device</th>
+                                    <th>Location</th>
+                                    <th>Time Remaining</th>
+                                    <th>Status</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="select" onclick="switchTab(event, 'tablight-lr')">
+                                    <td>Light</td>
+                                    <td>Living room</td>
+                                    <td id="light-timeremain-lr" class="timeremain">1</td>
+                                    <td id="light-timer-state-lr">ON</td>
+                                </tr>
+                                <tr onclick="switchTab(event, 'tablamp-lr')">
+                                    <td>Lamp</td>
+                                    <td>Living room</td>
+                                    <td id="lamp-timeremain-lr" class="timeremain">1</td>
+                                    <td id="lamp-timer-state-lr">ON</td>
+                                </tr>
+                                <tr onclick="switchTab(event, 'tabfan-lr')">
+                                    <td>Fan</td>
+                                    <td>Living room</td>
+                                    <td id="fan-timeremain-lr" class="timeremain">1</td>
+                                    <td id="fan-timer-state-lr">ON</td>
+                                </tr>
+                                <tr onclick="switchTab(event, 'tabtv-lr')">
+                                    <td>TV</td>
+                                    <td>Living room</td>
+                                    <td id="tv-timeremain-lr" class="timeremain">1</td>
+                                    <td id="tv-timer-state-lr">ON</td>
+                                </tr>
+                                <tr onclick="switchTab(event, 'tablight-kc')">
+                                    <td>Light</td>
+                                    <td>Kitchen</td>
+                                    <td id="light-timeremain-kc" class="timeremain">1</td>
+                                    <td id="light-timer-state-kc">ON</td>
+                                </tr>
+                                <tr onclick="switchTab(event, 'tabhood-kc')">
+                                    <td>Hood</td>
+                                    <td>Kitchen</td>
+                                    <td id="hood-timeremain-kc" class="timeremain">1</td>
+                                    <td id="hood-timer-state-kc">ON</td>
+                                </tr>
+                                <tr onclick="switchTab(event, 'tabcooker-kc')">
+                                    <td>Cooker</td>
+                                    <td>Kitchen</td>
+                                    <td id="cooker-timeremain-kc" class="timeremain">1</td>
+                                    <td id="cooker-timer-state-kc">ON</td>
+                                </tr>
+                                <tr onclick="switchTab(event, 'tabstove-kc')">
+                                    <td>Stove</td>
+                                    <td>Kitchen</td>
+                                    <td id="stove-timeremain-kc" class="timeremain">1</td>
+                                    <td id="stove-timer-state-kc">ON</td>
+                                </tr>
+                                <tr onclick="switchTab(event, 'tablight-br')">
+                                    <td>Light</td>
+                                    <td>Bedroom</td>
+                                    <td id="light-timeremain-br" class="timeremain">1</td>
+                                    <td id="light-timer-state-br">ON</td>
+                                </tr>
+                                <tr onclick="switchTab(event, 'tablamp-br')">
+                                    <td>Lamp</td>
+                                    <td>Bedroom</td>
+                                    <td id="lamp-timeremain-br" class="timeremain">1</td>
+                                    <td id="lamp-timer-state-br">ON</td>
+                                </tr>
+                                <tr onclick="switchTab(event, 'tabfan-br')">
+                                    <td>Fan</td>
+                                    <td>Bedroom</td>
+                                    <td id="fan-timeremain-br" class="timeremain">1</td>
+                                    <td id="fan-timer-state-br">ON</td>
+                                </tr>
+                                <tr onclick="switchTab(event, 'tabpc-br')">
+                                    <td>PC</td>
+                                    <td>Bedroom</td>
+                                    <td id="pc-timeremain-br" class="timeremain">1</td>
+                                    <td id="pc-timer-state-br">ON</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="clock-timer">
+                        <div id="tablight-lr" class="tab-content">
+                            <div class="timertitle">
+                            <h1>Light</h1>
+                            <h3>Living room</h3>
+                            </div>
+                            <div class="time-circle">
+                                <svg width="240" height="240" style="transform: rotate(-90deg);">
+                                    <circle cx="120" cy="120" r="110" stroke="#7d8da1" stroke-width="15" fill="none" stroke-linecap="round" id="bg-circle"></circle>
+                                    <circle cx="120" cy="120" r="110" stroke="#ff0060" stroke-width="15" fill="none" stroke-linecap="round" id="animate-circle-light-lr"></circle>
+                                </svg>
+                                <div class="time-display">
+                                    <h1 class="hdisplay-light-lr">00</h1>
+                                    <h1>:</h1>
+                                    <h1 class="mdisplay-light-lr">00</h1>
+                                    <span class="sdisplay-light-lr">00</span>
+                                </div>    
+                            </div>
+                            <div class="settime">
+                                <h3>Enter number of minutes</h3>
+                                <input type="number" id="minutesInput-light-lr">
+                                <button type="button" id="play_btn-light-lr" class="playbutton">
+                                    <span class="material-icons-outlined">play_arrow</span>
+                                </button>
+                            </div>
+                        </div>
+                        <div style="display: none;" id="tablamp-lr" class="tab-content">
+                            <div class="timertitle">
+                            <h1>Lamp</h1>
+                            <h3>Living room</h3>
+                            </div>
+                            <div class="time-circle">
+                                <svg width="240" height="240" style="transform: rotate(-90deg);">
+                                    <circle cx="120" cy="120" r="110" stroke="#7d8da1" stroke-width="15" fill="none" stroke-linecap="round" id="bg-circle"></circle>
+                                    <circle cx="120" cy="120" r="110" stroke="#ff0060" stroke-width="15" fill="none" stroke-linecap="round" id="animate-circle-lamp-lr"></circle>
+                                </svg>
+                                <div class="time-display">
+                                    <h1 class="hdisplay-lamp-lr">00</h1>
+                                    <h1>:</h1>
+                                    <h1 class="mdisplay-lamp-lr">00</h1>
+                                    <span class="sdisplay-lamp-lr">00</span>
+                                </div>    
+                            </div>
+                            <div class="settime">
+                                <h3>Enter number of minutes</h3>
+                                <input type="number" id="minutesInput-lamp-lr">
+                                <button type="button" id="play_btn-lamp-lr" class="playbutton">
+                                    <span class="material-icons-outlined">play_arrow</span>
+                                </button>
+                            </div>
+                        </div>
+                        <div style="display: none;" id="tabfan-lr" class="tab-content">
+                            <div class="timertitle">
+                            <h1>Fan</h1>
+                            <h3>Living room</h3>
+                            </div>
+                            <div class="time-circle">
+                                <svg width="240" height="240" style="transform: rotate(-90deg);">
+                                    <circle cx="120" cy="120" r="110" stroke="#7d8da1" stroke-width="15" fill="none" stroke-linecap="round" id="bg-circle"></circle>
+                                    <circle cx="120" cy="120" r="110" stroke="#ff0060" stroke-width="15" fill="none" stroke-linecap="round" id="animate-circle-fan-lr"></circle>
+                                </svg>
+                                <div class="time-display">
+                                    <h1 class="hdisplay-fan-lr">00</h1>
+                                    <h1>:</h1>
+                                    <h1 class="mdisplay-fan-lr">00</h1>
+                                    <span class="sdisplay-fan-lr">00</span>
+                                </div>    
+                            </div>
+                            <div class="settime">
+                                <h3>Enter number of minutes</h3>
+                                <input type="number" id="minutesInput-fan-lr">
+                                <button type="button" id="play_btn-fan-lr" class="playbutton">
+                                    <span class="material-icons-outlined">play_arrow</span>
+                                </button>
+                            </div>
+                        </div>
+                        <div style="display: none;" id="tabtv-lr" class="tab-content">
+                            <div class="timertitle">
+                            <h1>TV</h1>
+                            <h3>Living room</h3>
+                            </div>
+                            <div class="time-circle">
+                                <svg width="240" height="240" style="transform: rotate(-90deg);">
+                                    <circle cx="120" cy="120" r="110" stroke="#7d8da1" stroke-width="15" fill="none" stroke-linecap="round" id="bg-circle"></circle>
+                                    <circle cx="120" cy="120" r="110" stroke="#ff0060" stroke-width="15" fill="none" stroke-linecap="round" id="animate-circle-tv-lr"></circle>
+                                </svg>
+                                <div class="time-display">
+                                    <h1 class="hdisplay-tv-lr">00</h1>
+                                    <h1>:</h1>
+                                    <h1 class="mdisplay-tv-lr">00</h1>
+                                    <span class="sdisplay-tv-lr">00</span>
+                                </div>    
+                            </div>
+                            <div class="settime">
+                                <h3>Enter number of minutes</h3>
+                                <input type="number" id="minutesInput-tv-lr">
+                                <button type="button" id="play_btn-tv-lr" class="playbutton">
+                                    <span class="material-icons-outlined">play_arrow</span>
+                                </button>
+                            </div>
+                        </div>
+                        <div style="display: none;" id="tablight-kc" class="tab-content">
+                            <div class="timertitle">
+                            <h1>Light</h1>
+                            <h3>Kitchen</h3>
+                            </div>
+                            <div class="time-circle">
+                                <svg width="240" height="240" style="transform: rotate(-90deg);">
+                                    <circle cx="120" cy="120" r="110" stroke="#7d8da1" stroke-width="15" fill="none" stroke-linecap="round" id="bg-circle"></circle>
+                                    <circle cx="120" cy="120" r="110" stroke="#ff0060" stroke-width="15" fill="none" stroke-linecap="round" id="animate-circle-light-kc"></circle>
+                                </svg>
+                                <div class="time-display">
+                                    <h1 class="hdisplay-light-kc">00</h1>
+                                    <h1>:</h1>
+                                    <h1 class="mdisplay-light-kc">00</h1>
+                                    <span class="sdisplay-light-kc">00</span>
+                                </div>    
+                            </div>
+                            <div class="settime">
+                                <h3>Enter number of minutes</h3>
+                                <input type="number" id="minutesInput-light-kc">
+                                <button type="button" id="play_btn-light-kc" class="playbutton">
+                                    <span class="material-icons-outlined">play_arrow</span>
+                                </button>
+                            </div>
+                        </div>
+                        <div style="display: none;" id="tabhood-kc" class="tab-content">
+                            <div class="timertitle">
+                            <h1>Hood</h1>
+                            <h3>Kitchen</h3>
+                            </div>
+                            <div class="time-circle">
+                                <svg width="240" height="240" style="transform: rotate(-90deg);">
+                                    <circle cx="120" cy="120" r="110" stroke="#7d8da1" stroke-width="15" fill="none" stroke-linecap="round" id="bg-circle"></circle>
+                                    <circle cx="120" cy="120" r="110" stroke="#ff0060" stroke-width="15" fill="none" stroke-linecap="round" id="animate-circle-hood-kc"></circle>
+                                </svg>
+                                <div class="time-display">
+                                    <h1 class="hdisplay-hood-kc">00</h1>
+                                    <h1>:</h1>
+                                    <h1 class="mdisplay-hood-kc">00</h1>
+                                    <span class="sdisplay-hood-kc">00</span>
+                                </div>    
+                            </div>
+                            <div class="settime">
+                                <h3>Enter number of minutes</h3>
+                                <input type="number" id="minutesInput-hood-kc">
+                                <button type="button" id="play_btn-hood-kc" class="playbutton">
+                                    <span class="material-icons-outlined">play_arrow</span>
+                                </button>
+                            </div>
+                        </div>
+                        <div style="display: none;" id="tabcooker-kc" class="tab-content">
+                            <div class="timertitle">
+                            <h1>Cooker</h1>
+                            <h3>Kitchen</h3>
+                            </div>
+                            <div class="time-circle">
+                                <svg width="240" height="240" style="transform: rotate(-90deg);">
+                                    <circle cx="120" cy="120" r="110" stroke="#7d8da1" stroke-width="15" fill="none" stroke-linecap="round" id="bg-circle"></circle>
+                                    <circle cx="120" cy="120" r="110" stroke="#ff0060" stroke-width="15" fill="none" stroke-linecap="round" id="animate-circle-cooker-kc"></circle>
+                                </svg>
+                                <div class="time-display">
+                                    <h1 class="hdisplay-cooker-kc">00</h1>
+                                    <h1>:</h1>
+                                    <h1 class="mdisplay-cooker-kc">00</h1>
+                                    <span class="sdisplay-cooker-kc">00</span>
+                                </div>    
+                            </div>
+                            <div class="settime">
+                                <h3>Enter number of minutes</h3>
+                                <input type="number" id="minutesInput-cooker-kc">
+                                <button type="button" id="play_btn-cooker-kc" class="playbutton">
+                                    <span class="material-icons-outlined">play_arrow</span>
+                                </button>
+                            </div>
+                        </div>
+                        <div style="display: none;" id="tabstove-kc" class="tab-content">
+                            <div class="timertitle">
+                            <h1>Stove</h1>
+                            <h3>Kitchen</h3>
+                            </div>
+                            <div class="time-circle">
+                                <svg width="240" height="240" style="transform: rotate(-90deg);">
+                                    <circle cx="120" cy="120" r="110" stroke="#7d8da1" stroke-width="15" fill="none" stroke-linecap="round" id="bg-circle"></circle>
+                                    <circle cx="120" cy="120" r="110" stroke="#ff0060" stroke-width="15" fill="none" stroke-linecap="round" id="animate-circle-stove-kc"></circle>
+                                </svg>
+                                <div class="time-display">
+                                    <h1 class="hdisplay-stove-kc">00</h1>
+                                    <h1>:</h1>
+                                    <h1 class="mdisplay-stove-kc">00</h1>
+                                    <span class="sdisplay-stove-kc">00</span>
+                                </div>    
+                            </div>
+                            <div class="settime">
+                                <h3>Enter number of minutes</h3>
+                                <input type="number" id="minutesInput-stove-kc">
+                                <button type="button" id="play_btn-stove-kc" class="playbutton">
+                                    <span class="material-icons-outlined">play_arrow</span>
+                                </button>
+                            </div>
+                        </div>
+                        <div style="display: none;" id="tablight-br" class="tab-content">
+                            <div class="timertitle">
+                            <h1>Light</h1>
+                            <h3>Bedroom</h3>
+                            </div>
+                            <div class="time-circle">
+                                <svg width="240" height="240" style="transform: rotate(-90deg);">
+                                    <circle cx="120" cy="120" r="110" stroke="#7d8da1" stroke-width="15" fill="none" stroke-linecap="round" id="bg-circle"></circle>
+                                    <circle cx="120" cy="120" r="110" stroke="#ff0060" stroke-width="15" fill="none" stroke-linecap="round" id="animate-circle-light-br"></circle>
+                                </svg>
+                                <div class="time-display">
+                                    <h1 class="hdisplay-light-br">00</h1>
+                                    <h1>:</h1>
+                                    <h1 class="mdisplay-light-br">00</h1>
+                                    <span class="sdisplay-light-br">00</span>
+                                </div>    
+                            </div>
+                            <div class="settime">
+                                <h3>Enter number of minutes</h3>
+                                <input type="number" id="minutesInput-light-br">
+                                <button type="button" id="play_btn-light-br" class="playbutton">
+                                    <span class="material-icons-outlined">play_arrow</span>
+                                </button>
+                            </div>
+                        </div>
+                        <div style="display: none;" id="tablamp-br" class="tab-content">
+                            <div class="timertitle">
+                            <h1>Lamp</h1>
+                            <h3>Bedroom</h3>
+                            </div>
+                            <div class="time-circle">
+                                <svg width="240" height="240" style="transform: rotate(-90deg);">
+                                    <circle cx="120" cy="120" r="110" stroke="#7d8da1" stroke-width="15" fill="none" stroke-linecap="round" id="bg-circle"></circle>
+                                    <circle cx="120" cy="120" r="110" stroke="#ff0060" stroke-width="15" fill="none" stroke-linecap="round" id="animate-circle-lamp-br"></circle>
+                                </svg>
+                                <div class="time-display">
+                                    <h1 class="hdisplay-lamp-br">00</h1>
+                                    <h1>:</h1>
+                                    <h1 class="mdisplay-lamp-br">00</h1>
+                                    <span class="sdisplay-lamp-br">00</span>
+                                </div>    
+                            </div>
+                            <div class="settime">
+                                <h3>Enter number of minutes</h3>
+                                <input type="number" id="minutesInput-lamp-br">
+                                <button type="button" id="play_btn-lamp-br" class="playbutton">
+                                    <span class="material-icons-outlined">play_arrow</span>
+                                </button>
+                            </div>
+                        </div>
+                        <div style="display: none;" id="tabfan-br" class="tab-content">
+                            <div class="timertitle">
+                            <h1>Fan</h1>
+                            <h3>Bedroom</h3>
+                            </div>
+                            <div class="time-circle">
+                                <svg width="240" height="240" style="transform: rotate(-90deg);">
+                                    <circle cx="120" cy="120" r="110" stroke="#7d8da1" stroke-width="15" fill="none" stroke-linecap="round" id="bg-circle"></circle>
+                                    <circle cx="120" cy="120" r="110" stroke="#ff0060" stroke-width="15" fill="none" stroke-linecap="round" id="animate-circle-fan-br"></circle>
+                                </svg>
+                                <div class="time-display">
+                                    <h1 class="hdisplay-fan-br">00</h1>
+                                    <h1>:</h1>
+                                    <h1 class="mdisplay-fan-br">00</h1>
+                                    <span class="sdisplay-fan-br">00</span>
+                                </div>    
+                            </div>
+                            <div class="settime">
+                                <h3>Enter number of minutes</h3>
+                                <input type="number" id="minutesInput-fan-br">
+                                <button type="button" id="play_btn-fan-br" class="playbutton">
+                                    <span class="material-icons-outlined">play_arrow</span>
+                                </button>
+                            </div>
+                        </div>
+                        <div style="display: none;" id="tabpc-br" class="tab-content">
+                            <div class="timertitle">
+                            <h1>PC</h1>
+                            <h3>Bedroom</h3>
+                            </div>
+                            <div class="time-circle">
+                                <svg width="240" height="240" style="transform: rotate(-90deg);">
+                                    <circle cx="120" cy="120" r="110" stroke="#7d8da1" stroke-width="15" fill="none" stroke-linecap="round" id="bg-circle"></circle>
+                                    <circle cx="120" cy="120" r="110" stroke="#ff0060" stroke-width="15" fill="none" stroke-linecap="round" id="animate-circle-pc-br"></circle>
+                                </svg>
+                                <div class="time-display">
+                                    <h1 class="hdisplay-pc-br">00</h1>
+                                    <h1>:</h1>
+                                    <h1 class="mdisplay-pc-br">00</h1>
+                                    <span class="sdisplay-pc-br">00</span>
+                                </div>    
+                            </div>
+                            <div class="settime">
+                                <h3>Enter number of minutes</h3>
+                                <input type="number" id="minutesInput-pc-br">
+                                <button type="button" id="play_btn-pc-br" class="playbutton">
+                                    <span class="material-icons-outlined">play_arrow</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer">
+                    <h3>Nguyen Tien Dung - 21119183</h3>
+                </div>    
+            </section>
+        </main>
+    </div>
+    <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-app.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-database.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

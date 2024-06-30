@@ -1,0 +1,42 @@
+.furn{
+    display: flex;
+    flex-direction: row;
+    height: 172.8px;
+}
+.device{
+    display: grid;
+    grid-template-columns: repeat(3, 2fr);
+    gap: 1.6rem;
+    height: 396px;
+}
+.side1 img{
+    width: 125px;
+}
+.side2 span{
+    font-weight: 600;
+    font-size: 1.4rem;
+}
+.counit{
+    display: flex;
+    flex-direction: row;
+}
+.range-slider{
+    width: 100%;
+    background-color: #7d8da1;
+    height: 20px;
+    transition: background 450ms ease-in;
+    -webkit-appearance: none;
+    border-radius: 25px;
+}
+.range-slider::-webkit-slider-thumb{
+    cursor: pointer;
+    appearance: none;
+    height: 28px;
+    width: 28px;
+    background-color: #f6f6f9;
+    border-radius: 50%;
+}
+.thanh-truot input[type="range"] {
+    flex: 1;
+    width: 100%;
+}

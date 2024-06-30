@@ -1,0 +1,19 @@
+/* CSS của bạn ở đây */
+.furn1{
+    display: flex;
+    flex-direction: row;
+    height: 225px;
+}
+.device{
+    display: grid;
+    grid-template-columns: repeat(3, 2fr);
+    gap: 1.6rem;
+    height: 396px;
+}
+.container{
+    display: grid;
+    width: 96%;
+    margin: 0 auto;
+    gap: 1.8rem;
+    grid-template-columns: 12rem auto;
+}

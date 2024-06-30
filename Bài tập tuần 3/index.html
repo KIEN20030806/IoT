@@ -1,0 +1,303 @@
+<!DOCTYPE htmL>
+ <html Lang="en">
+<head>
+     <meta charset="utf-8">
+     <meta http-equiv="X-UA-Compatible"
+    content="IE=edge">
+     <meta name="viewport"
+    content="width=device-width, initial-scale=1.0">
+     <title>Holy Grail Layout</title>
+     <link rel="stylesheet" type="text/css"
+    href="style.css">
+    <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
+                                    
+    <link href="https://cdn.jsdelivr.net/npm/round-slider@1.6.1/dist/roundslider.min.css" rel="stylesheet" />
+                                        
+    <script src="https://cdn.jsdelivr.net/npm/round-slider@1.6.1/dist/roundslider.min.js"></script>   
+</head>
+<body>
+    <header>
+        <img src="tasvbddo-removebg-preview.png" alt="">
+        <h1>SMART HOME</h1>
+    </header>
+    <div class="main">
+        <div class="menu">
+            <nav>
+                <a href="#" class="active" onclick="switchPage(event, 'Phòng khách')">Phòng khách</a>
+                <a href="#" onclick="switchPage(event, 'Phòng bếp')">Phòng bếp</a>
+                <a href="#" onclick="switchPage(event, 'Phòng ngủ')">Phòng ngủ</a>
+            </nav>
+        </div>
+        <main>
+            <div>
+                <section id="Phòng khách">
+                    <div class="sensors">
+                        <div class="sensor-item">
+                            <div id="Tem"></div>
+                            <div style="text-align: center;  padding: 16px; font-weight: 600; color: #2e1ff7;">Nhiệt độ</div>
+                        </div>
+                        <div class="sensor-item">
+                            <div id="Hum"></div>
+                            <div style="text-align: center;  padding: 16px; font-weight: 600; color: #2e1ff7; ">Độ ẩm</div>
+                        </div>
+                        <div class="sensor-item">
+                            <div id="Khiga"></div>
+                            <div style="text-align: center;  padding: 16px; font-weight: 600; color: #2e1ff7; ">Khí ga</div>
+                        </div>
+                        <div class="sensor-item">
+                            <div class="Chuyendong">
+                                <label class="switch">
+                                    <input type="checkbox" id="motionCheckbox">
+                                    <span class="slider round"></span>
+                                </label>
+                            </div>
+                            <div style="text-align: center;  padding: 16px; font-weight: 600; color: #2e1ff7; ">Motion</div>
+                        </div>
+                        <div class="sensor-item">
+                            <div class="slidecontainer">
+                                <input type="range" min="1" max="100" value="50" class="slider1" id="myRange">
+                            </div>
+                            <div style="text-align: center;  padding: 16px; font-weight: 600; color: #2e1ff7; ">Light</div>
+                        </div>
+                    </div>              
+                    <div>
+                        <div class="devices">
+                            <div class="devices-item">
+                                <div class="top">
+                                    <label class="switch">
+                                        <input type="checkbox" id="Fan">
+                                        <span class="slider round"></span>
+                                    </label>
+                                </div>
+                                <img src="Icon\fan_9602773.png" alt="">
+                                <div style="text-align: center; padding-top: 16px; padding-bottom: 16px; font-weight: 600; color: #2e1ff7; ">Quạt</div>    
+                            </div>
+                            <div class="devices-item">
+                                <div class="top">
+                                    <label class="switch">
+                                        <input type="checkbox" id="Fridge">
+                                        <span class="slider round"></span>
+                                    </label>
+                                </div>
+                                <img src="Icon\refrigerator_4249362.png" alt="">
+                                <div style="text-align: center; padding-top: 16px; padding-bottom: 16px;  font-weight: 600; color: #2e1ff7; ">Tủ lạnh</div>
+                            </div>
+                            <div class="devices-item">
+                                <div class="top">
+                                    <label class="switch">
+                                        <input type="checkbox" id="Maylanh">
+                                        <span class="slider round"></span>
+                                    </label>
+                                </div>
+                                <img src="Icon\electronics_13680448.png" alt="">
+                                <div style="text-align: center;padding-top: 16px; padding-bottom: 16px;  font-weight: 600; color: #2e1ff7; ">Máy lạnh</div>
+                            </div>
+                            <div class="devices-item">
+                                <div class="top" >
+                                    <label class="switch">
+                                        <input type="checkbox" id="TV">
+                                        <span class="slider round"></span>
+                                    </label>
+                                </div>
+                                <img src="Icon\television.png" alt="">
+                                <div style="text-align: center; padding-top: 16px; padding-bottom: 16px; font-weight: 600; color: #2e1ff7; ">Tivi</div>
+                            </div>
+                            <div class="devices-item">
+                                <div class="top">
+                                    <label class="switch">
+                                        <input type="checkbox" id="Losuoi">
+                                        <span class="slider round"></span>
+                                    </label>
+                                </div>
+                                <img src="Icon\fireplace.png" alt="">
+                                <div style="text-align: center; padding-top: 16px; padding-bottom: 16px; font-weight: 600; color: #2e1ff7; ">Lò sưởi</div>
+                            </div>
+                        </div>
+                    </div>    
+                </section>
+                <section id="Phòng bếp" style="display:none">
+                    <div class="sensors">
+                        <div class="sensor-item">
+                            <div id="Tem"></div>
+                            <div style="text-align: center;  padding: 16px; font-weight: 600; color: #2e1ff7;">Nhiệt độ</div>
+                        </div>
+                        <div class="sensor-item">
+                            <div id="Hum"></div>
+                            <div style="text-align: center;  padding: 16px; font-weight: 600; color: #2e1ff7; ">Độ ẩm</div>
+                        </div>
+                        <div class="sensor-item">
+                            <div id="Khiga"></div>
+                            <div style="text-align: center;  padding: 16px; font-weight: 600; color: #2e1ff7; ">Khí ga</div>
+                        </div>
+                        <div class="sensor-item">
+                            <div class="Chuyendong">
+                                <label class="switch">
+                                    <input type="checkbox" id="motionCheckbox">
+                                    <span class="slider round"></span>
+                                </label>
+                            </div>
+                            <div style="text-align: center;  padding: 16px; font-weight: 600; color: #2e1ff7; ">Motion</div>
+                        </div>
+                        <div class="sensor-item">
+                            <div class="slidecontainer">
+                                <input type="range" min="1" max="100" value="50" class="slider1" id="myRange">
+                            </div>
+                            <div style="text-align: center;  padding: 16px; font-weight: 600; color: #2e1ff7; ">Light</div>
+                        </div>
+                    </div>              
+                    <div>
+                        <div class="devices">
+                            <div class="devices-item">
+                                <div class="top">
+                                    <label class="switch">
+                                        <input type="checkbox" id="Fan">
+                                        <span class="slider round"></span>
+                                    </label>
+                                </div>
+                                <img src="Icon\fan_9602773.png" alt="">
+                                <div style="text-align: center; padding-top: 16px; padding-bottom: 16px; font-weight: 600; color: #2e1ff7; ">Quạt</div>    
+                            </div>
+                            <div class="devices-item">
+                                <div class="top">
+                                    <label class="switch">
+                                        <input type="checkbox" id="Fridge">
+                                        <span class="slider round"></span>
+                                    </label>
+                                </div>
+                                <img src="Icon\refrigerator_4249362.png" alt="">
+                                <div style="text-align: center; padding-top: 16px; padding-bottom: 16px;  font-weight: 600; color: #2e1ff7; ">Tủ lạnh</div>
+                            </div>
+                            <div class="devices-item">
+                                <div class="top">
+                                    <label class="switch">
+                                        <input type="checkbox" id="Maylanh">
+                                        <span class="slider round"></span>
+                                    </label>
+                                </div>
+                                <img src="Icon\electronics_13680448.png" alt="">
+                                <div style="text-align: center;padding-top: 16px; padding-bottom: 16px;  font-weight: 600; color: #2e1ff7; ">Máy lạnh</div>
+                            </div>
+                            <div class="devices-item">
+                                <div class="top" >
+                                    <label class="switch">
+                                        <input type="checkbox" id="TV">
+                                        <span class="slider round"></span>
+                                    </label>
+                                </div>
+                                <img src="Icon\television.png" alt="">
+                                <div style="text-align: center; padding-top: 16px; padding-bottom: 16px; font-weight: 600; color: #2e1ff7; ">Tivi</div>
+                            </div>
+                            <div class="devices-item">
+                                <div class="top">
+                                    <label class="switch">
+                                        <input type="checkbox" id="Losuoi">
+                                        <span class="slider round"></span>
+                                    </label>
+                                </div>
+                                <img src="Icon\fireplace.png" alt="">
+                                <div style="text-align: center; padding-top: 16px; padding-bottom: 16px; font-weight: 600; color: #2e1ff7; ">Lò sưởi</div>
+                            </div>
+                        </div>
+                    </div>    
+                </section>
+                <section id="Phòng ngủ" style="display:none">
+                    <div class="sensors">
+                        <!-- <div class="sensor-item">
+                            <div id="Tem"></div>
+                            <div style="text-align: center;  padding: 16px; font-weight: 600; color: #2e1ff7;">Nhiệt độ</div>
+                        </div> -->
+                        <div class="sensor-item">
+                            <div id="Hum"></div>
+                            <div style="text-align: center;  padding: 16px; font-weight: 600; color: #2e1ff7; ">Độ ẩm</div>
+                        </div>
+                        <div class="sensor-item">
+                            <div id="Khiga"></div>
+                            <div style="text-align: center;  padding: 16px; font-weight: 600; color: #2e1ff7; ">Khí ga</div>
+                        </div>
+                        <div class="sensor-item">
+                            <div class="Chuyendong">
+                                <label class="switch">
+                                    <input type="checkbox" id="motionCheckbox">
+                                    <span class="slider round"></span>
+                                </label>
+                            </div>
+                            <div style="text-align: center;  padding: 16px; font-weight: 600; color: #2e1ff7; ">Motion</div>
+                        </div>
+                        <div class="sensor-item">
+                            <div class="slidecontainer">
+                                <input type="range" min="1" max="100" value="50" class="slider1" id="myRange">
+                            </div>
+                            <div style="text-align: center;  padding: 16px; font-weight: 600; color: #2e1ff7; ">Light</div>
+                        </div>
+                    </div>              
+                    <div>
+                        <div class="devices">
+                            <div class="devices-item">
+                                <div class="top">
+                                    <label class="switch">
+                                        <input type="checkbox" id="Fan">
+                                        <span class="slider round"></span>
+                                    </label>
+                                </div>
+                                <img src="Icon\fan_9602773.png" alt="">
+                                <div style="text-align: center; padding-top: 16px; padding-bottom: 16px; font-weight: 600; color: #2e1ff7; ">Quạt</div>    
+                            </div>
+                            <div class="devices-item">
+                                <div class="top">
+                                    <label class="switch">
+                                        <input type="checkbox" id="Fridge">
+                                        <span class="slider round"></span>
+                                    </label>
+                                </div>
+                                <img src="Icon\refrigerator_4249362.png" alt="">
+                                <div style="text-align: center; padding-top: 16px; padding-bottom: 16px;  font-weight: 600; color: #2e1ff7; ">Tủ lạnh</div>
+                            </div>
+                            <div class="devices-item">
+                                <div class="top">
+                                    <label class="switch">
+                                        <input type="checkbox" id="Maylanh">
+                                        <span class="slider round"></span>
+                                    </label>
+                                </div>
+                                <img src="Icon\electronics_13680448.png" alt="">
+                                <div style="text-align: center;padding-top: 16px; padding-bottom: 16px;  font-weight: 600; color: #2e1ff7; ">Máy lạnh</div>
+                            </div>
+                            <div class="devices-item">
+                                <div class="top" >
+                                    <label class="switch">
+                                        <input type="checkbox" id="TV">
+                                        <span class="slider round"></span>
+                                    </label>
+                                </div>
+                                <img src="Icon\television.png" alt="">
+                                <div style="text-align: center; padding-top: 16px; padding-bottom: 16px; font-weight: 600; color: #2e1ff7; ">Tivi</div>
+                            </div>
+                            <div class="devices-item">
+                                <div class="top">
+                                    <label class="switch">
+                                        <input type="checkbox" id="Losuoi">
+                                        <span class="slider round"></span>
+                                    </label>
+                                </div>
+                                <img src="Icon\fireplace.png" alt="">
+                                <div style="text-align: center; padding-top: 16px; padding-bottom: 16px; font-weight: 600; color: #2e1ff7; ">Lò sưởi</div>
+                            </div>
+                        </div>
+                    </div>    
+                </section>
+            </div>     
+        </main>
+    </div>
+    <footer>
+        NGUYỄN VĂN KIÊN - 21119371
+        <br />
+        SĐT: 0338978133
+        <br />
+        Đại học Sư phạm Kỹ thuật TPHCM
+    </footer>
+
+</body>
+<script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-app.js"></script>
+		<script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-database.js"></script> 
+<script src="script.js"></script>
+</html>

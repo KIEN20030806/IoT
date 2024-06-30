@@ -1,0 +1,11 @@
+.furn{
+    display: flex;
+    flex-direction: row;
+    height: 172.8px;
+}
+.device{
+    display: grid;
+    grid-template-columns: repeat(3, 2fr);
+    gap: 1.6rem;
+    height: 396px;
+}

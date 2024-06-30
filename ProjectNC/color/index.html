@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="color.css">
+    <link rel="shortcut icon" href="#">
+    <title>Control</title>
+</head>
+    <body>
+        <div class="container">
+            <div class="device">
+                <div class="furn" id="mau-lr">
+                    <div class="chon-mau">
+                        <div class="thanh-truot">
+                            <label for="red">Đỏ:</label>
+                            <input type="range" id="red" min="0" max="255" value="0">
+                            <span id="red-val">0</span>
+                        </div>
+                        <div class="thanh-truot">
+                            <label for="green">Xanh lá:</label>
+                            <input type="range" id="green" min="0" max="255" value="0">
+                            <span id="green-val">0</span>
+                        </div>
+                        <div class="thanh-truot">
+                            <label for="blue">Xanh dương:</label>
+                            <input type="range" id="blue" min="0" max="255" value="0">
+                            <span id="blue-val">0</span>
+                        </div>
+                        <div class="ma-mau">
+                            <span>Mã màu:</span>
+                            <span id="hex-val">#000000</span>
+                        </div>
+                    </div>
+                    <div class="mau-hien-thi"></div>
+                </div>
+            </div>
+        </div>
+    <script src="color.js"></script>
+    </body>
+</html>

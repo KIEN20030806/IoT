@@ -1,0 +1,297 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    height: 95vh;
+    background: #f0eaea;
+    font-family: sans-serif;
+    text-align: center;
+    color: black;
+    font-size: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+header{
+    background-image: url(https://cdn.tgdd.vn/Files/2020/01/03/1229859/thiet-bi-nha-thong-minh-smarthome-la-gi-tai-sao-no-se-tro-thanh-xu-huong-cua-tuong-lai-.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    flex-direction: row;
+    gap: 32px;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+header>img {
+    height: 128px;
+    width: auto;
+    object-fit: cover;
+    padding: 16px;
+}
+
+header>h1 {
+    flex-grow: 1;
+    font-size: 32px;
+    text-align: center;
+    color: #ffffff;
+}
+
+.main{
+    display: flex;
+    flex-grow: 1;
+    gap:16px;
+}
+
+.menu{
+    background: #2519ca;
+    padding: 16px;
+    flex: 1 1 100px;
+    border-radius: 8px;
+}
+
+.menu>nav {
+    display: flex;
+    flex-direction: column;
+    gap: 8px
+
+}
+
+.menu>nav>a {
+    background: #5f0cfa;
+    display: block;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    border-radius: 8px;
+    text-align: center;
+    text-decoration: none;
+    color: rgb(252, 251, 251);
+    font-weight: 400;
+}
+
+main{
+    background: #f0eaea;
+    padding: 0;
+    flex: 5 5 150px;
+    border-radius: 16px;
+    display: flex;
+    flex-direction: row;
+}
+
+
+.sensors {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 16px;
+    box-shadow: #ccc;
+}
+
+.sensor-item {
+    background-color: #ffffff;
+    gap: 64px;
+    border-radius: 16px;
+    padding: 16px;
+}
+
+.slidecontainer {
+    width: 160px; /* Width of the outside container */
+    height: 25px;
+    padding-top: 28px;
+    padding-bottom: 48px;
+    padding-left: 28px;
+    padding-right: 28px;
+  }
+  
+  /* The slider itself */
+.slider1 {
+    border-radius: 32px;
+    -webkit-appearance: none;  /* Override default CSS styles */
+    appearance: none;
+    width: 100%; /* Full-width */
+    height: 25px; /* Specified height */
+    background: #d3d3d3; /* Grey background */
+    outline: none; /* Remove outline */
+    opacity: 0.7; /* Set transparency (for mouse-over effects on hover) */
+    -webkit-transition: .2s; /* 0.2 seconds transition on hover */
+    transition: opacity .2s;
+  }
+  
+  /* Mouse-over effects */
+.slider1:hover {
+    opacity: 1; /* Fully shown on mouse-over */
+  }
+  
+  /* The slider handle (use -webkit- (Chrome, Opera, Safari, Edge) and -moz- (Firefox) to override default look) */
+.slider1::-webkit-slider-thumb {
+    border-radius: 32px;
+
+    -webkit-appearance: none; /* Override default look */
+    appearance: none;
+    width: 25px; /* Set a specific slider handle width */
+    height: 25px; /* Slider handle height */
+    background: #04AA6D; /* Green background */
+    cursor: pointer; /* Cursor on hover */
+  }
+  
+.slider1::-moz-range-thumb {
+    width: 25px; /* Set a specific slider handle width */
+    height: 25px; /* Slider handle height */
+    background: #04AA6D; /* Green background */
+    cursor: pointer; /* Cursor on hover */
+  }
+
+.devices {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 16px;
+    padding-top: 16px;
+}
+
+.devices-item {
+    background-color: #ffffff;
+    gap: 64px;
+    border-radius: 16px;
+
+}
+
+.devices-item>img {
+    height: 48px;
+    width: 48px;
+}
+
+.top{
+    padding-top: 32px; 
+    padding-bottom: 16px;
+    padding-left: 51px; 
+    padding-right: 50px;
+}
+
+#Tem .rs-range-color  {
+    background-color: #f31919;
+}
+#Tem .rs-handle:after  {
+    background-color: #000000;
+}
+#Tem .rs-border  {
+    border-color: #dbd2d2;
+}
+
+#Tem .rs-bg-color  {
+    background-color: #ffffff
+}
+
+#Hum .rs-range-color  {
+    background-color: #50c8e6;
+}
+#Hum .rs-handle:after  {
+    background-color: #000000;
+}
+#Hum .rs-border  {
+    border-color: #dbd2d2;
+}
+
+#Hum .rs-bg-color  {
+    background-color: #ffffff;
+}
+
+#Khiga .rs-range-color  {
+    background-color: #32e267;
+}
+#Khiga .rs-handle:after  {
+    background-color: #000000;
+}
+#Khiga .rs-border  {
+    border-color: #dbd2d2;
+}
+
+#Khiga .rs-bg-color  {
+    background-color: #ffffff;
+}
+
+.Chuyendong{
+    padding-left:  52px;
+    padding-right: 52px;
+    padding-top: 24px;
+    padding-bottom: 20px;
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+}
+  
+  /* Hide default HTML checkbox */
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+  
+  /* The slider */
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+  
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+  
+input:checked + .slider {
+    background-color: #2196F3;
+  }
+  
+input:focus + .slider {
+    box-shadow: 0 0 1px #2196F3;
+  }
+  
+input:checked + .slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+  }
+  
+  /* Rounded sliders */
+.slider.round {
+    border-radius: 34px;
+  }
+  
+.slider.round:before {
+    border-radius: 50%;
+  }
+
+footer{
+    background: #ffffff;
+    padding: 1em 0 1em 0;
+    font-size: 16px;
+}
+
+@media all and (max-width: 550px){
+    .main{
+        flex-direction: column;
+    }
+    main{
+        padding: 5em 0 5em 0;
+    }
+}

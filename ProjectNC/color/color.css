@@ -1,0 +1,63 @@
+.furn{
+    display: flex;
+    flex-direction: row;
+    height: 172.8px;
+}
+.chon-mau {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* margin: 20px auto; */
+    width: 200px;
+}
+/* Màu */
+.chon-mau {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* margin: 20px auto; */
+    width: 200px;
+}
+
+.thanh-truot {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.thanh-truot label {
+    margin-right: 10px;
+    width: 50px;
+}
+
+.thanh-truot input[type="range"] {
+    flex: 1;
+    width: 100%;
+}
+
+.thanh-truot span {
+    width: 30px;
+    text-align: center;
+}
+
+.ma-mau {
+    display: flex;
+    align-items: center;
+    /* margin-top: 20px; */
+}
+
+.ma-mau span {
+    margin-right: 5px;
+}
+
+#hex-val {
+    font-size: 18px;
+}
+.mau-hien-thi {
+    display: flex;
+    padding-left: 150px;
+    width: 100px;
+    height: 100px;
+    background-color: #000000;
+}
+/* End màu */

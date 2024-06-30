@@ -1,0 +1,56 @@
+.furn{
+    display: flex;
+    flex-direction: row;
+    height: 172.8px;
+}
+.side1 img{
+    width: 125px;
+}
+.side2 span{
+    font-weight: 600;
+    font-size: 1.4rem;
+}
+.device > div .side2{
+    display: flex;
+    width: 150px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    margin-left: 40px;
+}
+.switch{
+    position: relative;
+    display: inline-block;
+    width: 58px;
+    height: 30px;
+}
+.toggle-btn{
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #7d8da1;
+    transition: 0.3s;
+    border-radius: 34px;
+}
+.switch input{display: none;}
+.toggle-btn:before {
+    position: absolute;
+    content: "";
+    height: 28px;
+    width: 28px;
+    bottom: -1px;
+    background-color: #f6f6f9;
+    transition: 0.3s;
+    border-radius: 50%;
+}
+
+input:checked +.toggle-btn {
+    background-color: #1b9c85;
+}
+
+input:checked +.toggle-btn:before {
+    transform: translateX(31px);
+}

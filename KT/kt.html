@@ -1,0 +1,82 @@
+<!DOCTYPE htmL>
+ <html Lang="en">
+<head>
+     <meta charset="utf-8">
+     <meta http-equiv="X-UA-Compatible"
+    content="IE=edge">
+     <meta name="viewport"
+    content="width=device-width, initial-scale=1.0">
+     <title>Kiem tra</title>
+     <link rel="stylesheet" type="text/css"
+    href="style.css">
+    <script src="https://code.jquery.com/jquery-3.2.1.js"></script>                                  
+    <link href="https://cdn.jsdelivr.net/npm/round-slider@1.6.1/dist/roundslider.min.css" rel="stylesheet" />                                      
+    <script src="https://cdn.jsdelivr.net/npm/round-slider@1.6.1/dist/roundslider.min.js"></script>   
+</head>
+<body>
+    <header>
+        <h1>Kiểm tra</h1>
+        <div class="cambien">
+            <span>T: <span style="color: red;" id="nhietdo"></span><span>°C</span></span>
+            <span>H: <span style="color: blue;" id="doam"></span><span>°C</span></span>
+        </div>
+    </header>
+    <div class="main">
+        <main>
+            <div class="phong">
+                <span>Phòng khách</span>
+                <div class="item">
+                    <div id="den">
+                        <img id="denimg" style="height: 128px; width: auto;" src="./img/denoff.png" alt="img">
+                        <div>   
+                            <button id="denon">ON</button>
+                            <button id="denoff">OFF</button>
+                        </div> 
+                    </div>
+                    <div id="quat">
+                        <img id="quatimg" style="height: 128px; width: auto;" src="./img/quatoff.png" alt="img">
+                        <div>   
+                            <button id="quaton">ON</button>
+                            <button id="quatoff">OFF</button>
+                        </div> 
+                    </div>
+                    <div id="maylanh">
+                        <img id="pic" style="height: 128px; width: auto;" src="./img/maylanh.png" alt="">
+                        <br><span>15</span>
+                        <input type="range" min="15" max="35" value="20" class="slider1" id="myRange">
+                        <span>35</span>
+                    </div>
+                </div>
+            </div>
+            <div class="phong">
+                <span>Phòng ngủ</span>
+                <div class="item">
+                    <div id="den1">
+                        <img id="denimg1" style="height: 128px; width: auto;" src="./img/denoff.png" alt="img">
+                        <div>   
+                            <button id="denon1">ON</button>
+                            <button id="denoff1">OFF</button>
+                        </div> 
+                    </div>
+                    <div id="quat1">
+                        <img id="quatimg1" style="height: 128px; width: auto;" src="./img/quatoff.png" alt="img">
+                        <div>   
+                            <button id="quaton1">ON</button>
+                            <button id="quatoff1">OFF</button>
+                        </div> 
+                    </div>
+                    <div id="maylanh1">
+                        <img id="pic1" style="height: 128px; width: auto;" src="./img/maylanh.png" alt="">
+                        <br><span>15</span>
+                        <input type="range" min="15" max="35" value="20" class="slider1" id="myRange1">
+                        <span>35</span>
+                    </div>
+                </div>
+            </div>              
+        </main>
+    </div>
+</body>
+<script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-database.js"></script> 
+<script src="script.js"></script>
+</html>

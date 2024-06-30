@@ -1,0 +1,16 @@
+.furn{
+    display: flex;
+    flex-direction: row;
+    height: 100px;
+    padding: 64px;
+}
+
+.clock {
+    background-color: #181a1e;
+    text-align: center;
+    color: #17D4FE;
+    font-size: 40px;
+    font-family: Orbitron;
+    letter-spacing: 7px;
+    border-radius: 20px;
+}

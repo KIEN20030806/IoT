@@ -1,0 +1,88 @@
+/* Body */
+body {
+    font-family: 'Arial', sans-serif; /* Chọn font chữ */
+    background-color: #f4f4f4; /* Màu nền */
+    color: #333; /* Màu chữ */
+}
+
+/* Header */
+header {
+    background-color: #007bff; /* Màu nền header */
+    color: #fff; /* Màu chữ header */
+    padding: 20px;
+    text-align: center;
+}
+
+/* Main */
+main {
+    padding: 20px;
+}
+
+/* Section */
+section {
+    margin-bottom: 20px;
+    border-radius: 10px; /* Bỏ góc cho các section */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Tạo bóng đổ */
+    padding: 20px;
+}
+
+/* h2 */
+h2 {
+    color: #333; /* Màu tiêu đề h2 */
+    margin-bottom: 15px;
+}
+
+/* Biểu đồ */
+#charts {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around; /* Phân bố các biểu đồ đều nhau */
+}
+
+canvas {
+    width: 400px; /* Chiều rộng biểu đồ */
+    height: 300px; /* Chiều cao biểu đồ */
+    margin: 10px;
+}
+
+/* Nút bấm */
+button {
+    background-color: #007bff; /* Màu nền nút bấm */
+    color: #fff; /* Màu chữ nút bấm */
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px; /* Bỏ góc nút bấm */
+    cursor: pointer;
+}
+
+/* Thanh trượt */
+input[type="range"] {
+    width: 100%; /* Chiều rộng thanh trượt */
+    margin-top: 10px;
+    padding: 5px;
+}
+
+/* Núm xoay */
+input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none; /* Tắt giao diện mặc định */
+    appearance: none; /* Tắt giao diện mặc định */
+    width: 20px; /* Chiều rộng núm xoay */
+    height: 20px; /* Chiều cao núm xoay */
+    background-color: #007bff; /* Màu nền núm xoay */
+    cursor: pointer;
+    border-radius: 50%; /* Tạo núm xoay tròn */
+}
+
+/* Bản đồ */
+#mapContainer {
+    height: 400px; /* Chiều cao bản đồ */
+    border: 1px solid #ccc;
+}
+
+/* Footer */
+footer {
+    background-color: #f4f4f4; /* Màu nền footer */
+    color: #333; /* Màu chữ footer */
+    text-align: center;
+    padding: 10px;
+}

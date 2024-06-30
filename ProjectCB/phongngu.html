@@ -1,0 +1,78 @@
+<!DOCTYPE htmL>
+ <html Lang="en">
+<head>
+     <meta charset="utf-8">
+     <meta http-equiv="X-UA-Compatible"
+    content="IE=edge">
+     <meta name="viewport"
+    content="width=device-width, initial-scale=1.0">
+     <title>Holy Grail Layout</title>
+     <link rel="stylesheet" type="text/css"
+    href="style.css">
+    <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
+                                    
+    <link href="https://cdn.jsdelivr.net/npm/round-slider@1.6.1/dist/roundslider.min.css" rel="stylesheet" />
+                                        
+    <script src="https://cdn.jsdelivr.net/npm/round-slider@1.6.1/dist/roundslider.min.js"></script>   
+</head>
+<body>
+    <header>
+        <img src="tasvbddo-removebg-preview.png" alt="">
+        <h1>SMART HOME</h1>
+    </header>
+    <div class="main">
+        <div class="menu">
+            <nav>
+                <a href="index.html" onclick="switchPage(event, 'Phòng ngủ')">Phòng Khách</a>
+                <a href="phongngu.html" onclick="switchPage(event, 'Phòng ngủ')">Phòng ngủ</a>
+            </nav>
+        </div>
+        <main>
+            <div>
+                <section id="Phòng ngủ">
+                    <div class="sensors">
+                        <div class="sensor-item">
+                            <img id="Quat" src="./img/quatoff.png" style="width: 128px; padding-bottom: 48px">
+                            <div style="text-align: center;  padding-bottom: 16px; font-weight: 600; color: #2e1ff7;">Quạt</div>
+                        </div>
+                        <div class="sensor-item">
+                            <div class="number-input">
+                                <button class="minus">-</button>
+                                <input type="text" class="quantity" value="22">
+                                <button class="plus">+</button>
+                            </div>
+                            <div style="text-align: center;  padding: 16px; font-weight: 600; color: #2e1ff7;">Số lượng</div>
+                        </div>
+                        <div class="sensor-item">
+                            <button id="circle-button" onclick="toggleLED()">Click Me</button>
+                        </div>
+                        <div class="sensor-item">
+                            <div class="led-box">
+                                <div class="led-red" id="ledIndicator"></div>
+                            </div>
+                            <div style="text-align: center;  padding: 16px; font-weight: 600; color: #2e1ff7; ">LED</div>
+                        </div>
+                        <div class="sensor-item">
+                            <div class="slidecontainer">
+                                <input type="range" min="1" max="100" value="50" class="slider1" id="myRange">
+                            </div>
+                            <div style="text-align: center;  padding: 16px; font-weight: 600; color: #2e1ff7; ">Light</div>
+                        </div>
+                    </div>                 
+                </section>
+            </div>     
+        </main>
+    </div>
+    <footer>
+        NGUYỄN VĂN KIÊN - 21119371
+        <br />
+        SĐT: 0338978133
+        <br />
+        Đại học Sư phạm Kỹ thuật TPHCM
+    </footer>
+
+</body>
+<script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-app.js"></script>
+		<script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-database.js"></script> 
+<script src="script1.js"></script>
+</html>

@@ -1,0 +1,57 @@
+body{
+    height: 95vh;
+    background: #fcfbfb;
+    font-family: sans-serif;
+    text-align: center;
+    color: black;
+    font-size: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.phong{
+    gap: 16px;
+    padding: 12px;
+    border: 2px solid #030101;
+}
+
+header{
+    background-image: url(https://cdn.tgdd.vn/Files/2020/01/03/1229859/thiet-bi-nha-thong-minh-smarthome-la-gi-tai-sao-no-se-tro-thanh-xu-huong-cua-tuong-lai-.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    flex-direction: row;
+    gap: 32px;
+    justify-content: flex-start;
+    align-items: center;
+    border-bottom: 2px solid #ccc;
+}
+
+header>img {
+    height: 128px;
+    width: auto;
+    object-fit: cover;
+    padding: 16px;
+}
+
+header>h1 {
+    flex-grow: 1;
+    font-size: 32px;
+    text-align: center;
+    color: #ffffff;
+}
+
+.cambien{
+    display: flex;
+    flex-direction: column;
+    border-left: 2px solid #030101;
+    border-bottom: 2px solid #030101;
+}
+
+.item {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2px;
+    box-shadow: #ccc;
+}

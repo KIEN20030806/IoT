@@ -1,0 +1,20 @@
+{
+  "Bedroom": {
+    "LED": 0,
+    "Light": "86",
+    "Quat": "OFF",
+    "Soluong": 23
+  },
+  "Hum": 41,
+  "LED": 1,
+  "Light": "100",
+  "Livingroom": {
+    "LED": 1,
+    "Light": "99",
+    "Quat": "ON",
+    "Soluong": 23
+  },
+  "Quat": "OFF",
+  "Soluong": 19,
+  "Tem": 23
+}

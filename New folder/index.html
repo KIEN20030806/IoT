@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IoT Web</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/charts.css">
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/controls.css">
+    <link rel="stylesheet" href="css/map.css">
+
+</head>
+<body>
+    <div id="container">
+        <header>
+            <h1>IoT Web</h1>
+        </header>
+
+        <main>
+            <section id="parameters">
+                <h2>Thông số</h2>
+                <div id="temperature">Nhiệt độ: 0°C</div>
+                <div id="humidity">Độ ẩm: 0%</div>
+                <div id="light">Ánh sáng: 0 lux</div>
+            </section>
+
+            <section id="charts">
+                <h2>Biểu đồ</h2>
+                <canvas id="temperatureChart"></canvas>
+                <canvas id="humidityChart"></canvas>
+                <canvas id="lightChart"></canvas>
+            </section>
+
+            <section id="controls">
+                <h2>Điều khiển</h2>
+                <button id="fanButton">Quạt</button>
+                <button id="lightButton">Đèn</button>
+                <input type="checkbox" id="lightSwitch">
+                <label for="fanSlider">Tốc độ quạt</label>
+                <input type="range" id="fanSlider" min="0" max="100" value="50">
+                <label for="brightnessKnob">Độ sáng đèn</label>
+                <input type="range" id="brightnessKnob" min="0" max="255" value="128">
+            </section>
+
+            <section id="map">
+                <h2>Bản đồ vị trí</h2>
+                <div id="mapContainer"></div>
+            </section>
+        </main>
+
+        <footer>
+            <p>IoT Web</p>
+        </footer>
+    </div>
+
+    <script src="https://www.gstatic.com/firebase/9/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebase/9/firebase-database.js"></script>
+    <script src="js/firebase.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/controls.js"></script>
+    <script src="js/charts.js"></script>
+    <script src="js/map.js"></script>
+</body>
+</html>

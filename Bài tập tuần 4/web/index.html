@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>IoT Laboratory </title>
+		<link rel="stylesheet" href="style.css">
+	</head>
+
+	<body>
+		<div>Count: <span style="color: red;" id="count"></span></div>
+		<div class="device">
+			<img id="d01_img" src="./img/light_bulb_off.png" alt="img" style="width:120px; height: 120px;">
+			<p>LED</p>
+			<div class="container">
+				<label class="switch">
+				  <input type="checkbox">
+				  <span class="slider round"></span>
+				</label>
+			</div>									
+		</div>
+
+		<script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-app.js"></script>
+		<script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-database.js"></script> 
+		<script src="script.js"></script>
+
+	</body>	
+
+</html>

@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
+    <link rel="shortcut icon" href="#">
+
+    <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
+                                    
+    <link href="https://cdn.jsdelivr.net/npm/round-slider@1.6.1/dist/roundslider.min.css" rel="stylesheet" />
+                                    
+    <script src="https://cdn.jsdelivr.net/npm/round-slider@1.6.1/dist/roundslider.min.js"></script> 
+    <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+    <title>Control</title>
+</head>
+<body>
+    <div class="container">
+        <!-- Side bar -->
+        <aside>
+            <div class="toggle">
+                <div class="logo">
+                    <img src="img/home.png" alt="home">
+                    <h2><span class="danger">CONTROL</span></h2>
+                </div>
+                <div class="close" id="close-btn">
+                    <span class="material-icons-outlined">
+                        close
+                    </span>
+                </div>
+            </div>
+
+            <div class="sidebar">
+                <a href="#" class="active" onclick="switchPage(event, 'control')">
+                    <span class="material-icons-outlined">
+                    </span>
+                    <h3>CONTROL</h3>
+                </a>
+                <a href="" onclick="switchPage(event, 'control1')">
+                    <span class="material-icons-outlined">
+                    </span>
+                    <h3>CONTROL</h3>
+                </a>
+                <a href="" onclick="switchPage(event, 'control2')">
+                    <span class="material-icons-outlined">
+                    </span>
+                    <h3>CONTROL</h3>
+                </a>
+                <a href="" onclick="switchPage(event, 'close')">
+                    <span class="material-icons-outlined">
+                    </span>
+                    <h3>CLOSE</h3>
+                </a>
+            </div>
+        </aside>
+        <!-- End of sidebar -->
+
+        <!-- Main content -->
+        <main>
+            <!-- Sensors -->
+            <div class="nav">
+                <div class="right-nav">
+                    <button id="menu-btn">
+                        <span class="material-icons-outlined">
+                            menu
+                        </span>
+                    </button>
+                    <div class="dark-mode">
+                        <span class="material-icons-outlined active">
+                            light_mode
+                        </span>
+                        <span class="material-icons-outlined">
+                            dark_mode
+                        </span>
+                    </div>
+
+                    <div class="profile">
+                        <div class="info">
+                            <p><b>KIÊN - MINH</b></p>
+                            <small class="text-muted">Hello</small>
+                        </div>
+                        <div class="profile-photo">
+                            <img src="img/avatar.jpg">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <section id="control">
+                <div class="sensor">
+                    <div class="temperature">
+                        <div class="status">
+                            <div class="info">
+                                <h3>Temperature</h3>
+                                <div class="unit">
+                                    <h1 id="temp_01">00</h1>
+                                    <h1>°C</h1>
+                                </div>
+                            </div>
+                            <div class="sensor-icon">
+                                <img src="img/thermometer.png" alt="temp">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="humidity">
+                        <div class="status">
+                            <div class="info">
+                                <h3>Humidity</h3>
+                                <div class="unit">
+                                    <h1 id="hum_01">00</h1>
+                                    <h1>%</h1>
+                                </div>
+                            </div>
+                            <div class="sensor-icon">
+                                <img src="img/humidity.png" alt="hum">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="oxi">
+                        <div class="status">
+                            <div class="info">
+                                <h3>Oxi</h3>
+                                <div class="unit">
+                                    <h1 id="oxi_01">00</h1>
+                                    <h1>%</h1>
+                                </div>
+                            </div>
+                            <div class="sensor-icon">
+                                <img src="img/oxi.png" alt="gas">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="brightness">
+                        <div class="status">
+                            <div class="info">
+                                <h3>Brightness</h3>
+                                <div class="unit">
+                                    <h1 id="bright_01">00</h1>
+                                    <h1>Lux</h1>
+                                </div>
+                            </div>
+                            <div class="sensor-icon">
+                                <img src="img/brightness.png" alt="bright">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Controller -->
+                <div class="controller">
+                    <h1>control</h1>
+                    <div class="device">
+                        <div class="furn" id="light-lr"> 
+                            <div class="side1">
+                                <img src="img/light-off.png" alt="light-bulb img" id="light-lr-img">
+                            </div>
+                            <div class="side2">
+                                <h1>Light</h1>
+                                <h2 id="light-lr-status">OFF</h2>
+                                <label class="switch">
+                                    <input type="checkbox" id="light-lr-btn">
+                                    <span class="toggle-btn"></span>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="furn" id="ac-lr">
+                            <div class="side1">
+                                <img src="img/Slider.png" alt="ac img" id="ac-lr-img">
+                            </div>
+                            <div class="side2">
+                                <h1>Slider</h1>
+                                <div class="counit">
+                                    <span id="acValue-lr">16</span>
+                                    <h2 id="ac_lr_unit">Hz</h2>
+                                </div>
+                                <input type="range" value="16" min="16" max="33" class="range-slider" id="ac-lr-slider">
+                            </div>
+                        </div>
+                        <div class="furn" id="btn">
+                            <div class="side1">
+                                <img src="img/btn-off.png" alt="btn img" id="btn-img">
+                            </div>
+                            <div class="side2">
+                                <h1>Button</h1>
+                                <h2 id="btn-status">OFF</h2>
+                                <button id="btn-btn" class="toggle-btn1">Click</button>
+                            </div>
+                        </div>                        
+                        <div class="furn" id="round1-lr">
+                            <div class="side1">
+                                <div id="appearance4"></div>    
+                            </div>
+                            <div class="side2">
+                                <h1>Round 1</h1>
+                                <span id="r1Value-lr">16</span>
+                                <img style="width: 40px;" src="img/icon.png" alt="icon img" id="icon-lr-img">
+                            </div>
+                        </div>
+                        <div class="furn" id="round2-lr">
+                            <div class="side1">
+                                <div id="handle1"></div>    
+                            </div>
+                            <div class="side2">
+                                <h1>Round 2</h1>
+                                <span id="r2Value-lr">16</span>
+                                <img style="width: 40px;" src="img/icon.png" alt="icon img" id="icon-lr-img">
+                            </div>
+                        </div>
+                        <div class="furn" id="clock-lr">
+                            <div id="MyClockDisplay" class="clock" onload="showTime()"></div>
+                        </div>
+                        <div class="furn" id="map-lr">
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3918.4853986110847!2d106.76933817408852!3d10.850637657822444!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752763f23816ab%3A0x282f711441b6916f!2zVHLGsOG7nW5nIMSQ4bqhaSBo4buNYyBTxrAgcGjhuqFtIEvhu7kgdGh14bqtdCBUaMOgbmggcGjhu5EgSOG7kyBDaMOtIE1pbmg!5e0!3m2!1svi!2s!4v1713021806590!5m2!1svi!2s" width="350" height="120" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        </div>
+                        <div class="furn" id="mau-lr">
+                            <div class="chon-mau">
+                                <div class="thanh-truot">
+                                    <label for="red">Đỏ:</label>
+                                    <input type="range" id="red" min="0" max="255" value="0">
+                                    <span id="red-val">0</span>
+                                </div>
+                                <div class="thanh-truot">
+                                    <label for="green">Xanh lá:</label>
+                                    <input type="range" id="green" min="0" max="255" value="0">
+                                    <span id="green-val">0</span>
+                                </div>
+                                <div class="thanh-truot">
+                                    <label for="blue">Xanh dương:</label>
+                                    <input type="range" id="blue" min="0" max="255" value="0">
+                                    <span id="blue-val">0</span>
+                                </div>
+                                <div class="ma-mau">
+                                    <span>Mã màu:</span>
+                                    <span id="hex-val">#000000</span>
+                                </div>
+                            </div>
+                            <div class="mau-hien-thi"></div>
+                        </div>
+                        <div class="furn" id="chart1-lr">
+                            <div id="chartContainer" style="height: 140px; width: 350px;"></div>
+                        </div>
+                        <div class="furn1" id="chart2-lr">
+                            <canvas id="myChart" style="height: 50px; width: 80px;"></canvas>
+                        </div>
+                        <div class="furn1" id="chart3-lr">
+                            <canvas id="myPieChart" style="height: 40px; width: 80px;"></canvas>
+                        </div>
+                        <div class="furn1" id="chart4-lr">
+                            <canvas id="linechart" style="height: 40px; width: 80px;"></canvas>
+                        </div>
+                    </div>         
+                </div>
+           
+        </main>
+    </div>
+    <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-app.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-database.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

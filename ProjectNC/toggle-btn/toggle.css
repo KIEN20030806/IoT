@@ -1,0 +1,74 @@
+.furn{
+    display: flex;
+    flex-direction: row;
+    height: 172.8px;
+}
+
+.side1 img{
+    width: 125px;
+}
+
+.side2{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    margin-left: 40px;
+}
+
+/* CSS cho HTML */
+/* Bổ sung vào phần CSS hiện có */
+
+.toggle-btn1 {
+    position: relative;
+    display: inline-block;
+    width: 150px;
+    height: 45px;
+    text-align: center;
+    line-height: 45px;
+    color: #fff;
+    font-size: 18px;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-family: sans-serif;
+    box-sizing: border-box;
+    background: linear-gradient(90deg, #03a9f4, #f441a5, #ffeb3b, #03a9f4);
+    background-size: 400%;
+    border-radius: 22px;
+    z-index: 1;
+  }
+  
+  .toggle-btn1:hover {
+    animation: animate 8s linear infinite;
+  }
+  
+  @keyframes animate {
+    0% {
+      background-position: 0%;
+    }
+    100% {
+      background-position: 400%;
+    }
+  }
+  
+  .toggle-btn1:before {
+    content: "";
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    bottom: -5px;
+    left: -5px;
+    z-index: -1;
+    background: linear-gradient(90deg, #03a9f4, #f441a5, #ffeb3b, #03a9f4);
+    background-size: 400%;
+    border-radius: 40px;
+    opacity: 0;
+    transition: .5s;
+  }
+  
+  .toggle-btn1:hover:before {
+    filter: blur(20px);
+    opacity: 1;
+    animation: animate 8s linear infinite;
+  }
+  

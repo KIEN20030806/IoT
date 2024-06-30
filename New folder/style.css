@@ -1,0 +1,20 @@
+body {
+    font-family: sans-serif;
+}
+
+header {
+    background-color: #f0f0f0;
+    padding: 20px;
+}
+
+#main-content {
+    padding: 20px;
+}
+
+#sensor-data, #charts, #controls, #map {
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    padding: 15px;
+}
+
+/* Thêm các kiểu định dạng khác cho các đối tượng cụ thể */
